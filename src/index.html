@@ -1,0 +1,81 @@
+<!--#include virtual="/graphics/soup/bowl/v1/standalone/head.html"-->
+<%- include('_partials/meta.html') %>
+<link rel="stylesheet" type="text/css" href="css/index.css"/>
+
+<!--#include virtual="/graphics/soup/bowl/v1/standalone/neck.html"-->
+<div class="dvz-v0-ad dvz-v0-ad-top"></div>
+<!--#include virtual="/graphics/soup/bowl/v1/standalone/nav.html"-->
+
+<div class="dvz-content">
+  <section class="lede">
+    <%# For an article with no lede image, delete div.lede-image %>
+    <%# If the headline should be on top of the lede image, put h1.article-title inside of div.lede-image %>
+    <div class="lede-image" style="background-image: url('<%= locals.bannerImage %>');"></div>
+
+    <h1 class="copy-width article-title"><%= h.smartQuotes(headline) %></h1>
+
+    <div class="copy-width bydek">
+      <div class="byline">
+        By <%- h.toSentence(authors.map(author => include('_partials/author.html', { author }))) %>
+      </div>
+      <div class="pubdate">
+        <span><% if (updatedAt) { %>Published: <% } %><%- include('_partials/time.html', { utc: publishedAt, nyc: publishedAtNYC }) %></span>
+        <% if (updatedAt) { %>
+          | <span>Updated: <%- include('_partials/time.html', { utc: updatedAt, nyc: updatedAtNYC }) %></span>
+        <% } %>
+      </div>
+      <div class="dvz-social-media-buttons dvz-social-media-notext"></div>
+    </div>
+  </section>
+
+  <section class="container-width">
+    <div class="copy-width copy-block">
+      <%# This is how you would load some paragraphs from `index.aml` but feel free to modify to your wishes %>
+      <% dek.forEach(graf => { %>
+        <p><%- h.prettyCopy(graf.value) %></p>
+      <% }) %>
+    </div>
+
+    <%/*
+      Ai2html: To use ai2html, remove the ejs comment blocks before & after the following figure
+        * Change 'empty.ai2html.html' to your AI output file name.
+        * Use *files/ai2html-for-illustrator* to save AI output to *src/_ai2html/*
+        * Uncomment `borscht.ai2html()` in *src/js/main.js* to make responsive
+        * Full documentation at https://bbgithub.dev.bloomberg.com/soup/borscht/wiki/ai2html
+    */%>
+    <% /* %>
+    <figure class="chart-block">
+      <h4 class="chart-title">Chart Title</h4>
+      <div class="chart-dek">Chart dek</div>
+      <div class="chart-box"><%- include('_ai2html/empty.ai2html.html') %></div>
+      <figcaption>
+        <div class="chart-source">Source: Bloomberg Data</div>
+      </figcaption>
+    </figure>
+    <% */ %>
+
+    <%/*
+      BlockToHtml: To use the block2html workflow, remove the ejs comment blocks before & after the following include line
+        * Include the asset partials in your project: `npm install git+https://github.com/bizweekgraphics/block2html`
+        * Format copy and assets in a "sections" array in your aml or json
+        * Full documentation at https://bbgithub.dev.bloomberg.com/soup/borscht/wiki/block2html
+    */%>
+    <% /* %>
+    <%- include('_partials/block2html.html', {sections}) %>
+    <% */ %>
+
+  </section>
+
+  <section class="footer copy-width">
+    <p>Source: <%- h.prettyCopy(source) %></p>
+  </section>
+</div>
+
+<div class="dvz-v0-ad"></div>
+
+<div class="dvz-content">
+  <section class="dvz-recirculator container-width"></section>
+</div>
+
+<script src="js/main.js"></script>
+<!--#include virtual="/graphics/soup/bowl/v1/standalone/foot.html"-->

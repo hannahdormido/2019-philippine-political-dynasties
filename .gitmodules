@@ -1,0 +1,3 @@
+[submodule ".soup"]
+	path = .soup
+	url = https://github.com/bizweekgraphics/borscht-scaffold.git

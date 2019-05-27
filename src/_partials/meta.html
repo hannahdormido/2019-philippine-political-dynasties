@@ -1,0 +1,49 @@
+<!-- SEO headline rewritten to accommodate keywords -->
+<title><%= h.smartQuotes(seo.title || headline) %></title>
+<link rel="canonical" href="https://www.bloomberg.com/<%= h.formatOrgUrl(org) %>/<%= slug %>/<%= locals.filename %>" />
+<meta name="description" content="<%= h.smartQuotes(seo.description) %>" />
+<meta name="keywords" content="<%= h.smartQuotes(seo.keywords) %>" />
+
+<meta property="og:title" content="<%= h.smartQuotes(facebook.title || headline) %>" />
+<meta property="og:image" content="https://www.bloomberg.com/<%= h.formatOrgUrl(org) %>/<%= slug %>/<%= facebook.image %>" />
+<meta property="og:description" content="<%= h.smartQuotes(facebook.description || seo.description || twitter.description) %>" />
+<meta property="og:url" content="https://www.bloomberg.com/<%= h.formatOrgUrl(org) %>/<%= slug %>/" />
+
+<meta name="twitter:site" content="<%= twitter.site %>" />
+<meta name="twitter:title" content="<%= h.smartQuotes(twitter.title || headline) %>" />
+<meta name="dvz:twitter" content="<%= h.smartQuotes(twitter.tweet || twitter.tweet) %>" />
+<meta name="twitter:image" content="https://www.bloomberg.com/<%= h.formatOrgUrl(org) %>/<%= slug %>/<%= twitter.image %>" />
+<meta name="twitter:description" content="<%= h.smartQuotes(twitter.description || seo.description || facebook.description || headline) %>" />
+
+<meta name="parsely-title" content="<%= h.smartQuotes(seo.title || headline) %>" />
+<meta name="parsely-link" content="https://www.bloomberg.com/<%= h.formatOrgUrl(org) %>/<%= slug %>/" />
+<meta name="parsely-post-id" content="https://www.bloomberg.com/<%= h.formatOrgUrl(org) %>/<%= slug %>/" />
+<meta name="parsely-image-url" content="https://www.bloomberg.com/<%= h.formatOrgUrl(org) %>/<%= slug %>/<%= facebook.image %>" />
+<meta name="parsely-tags" content="<%= h.smartQuotes(seo.keywords) %>,<%= h.smartQuotes(parsely_tags.join(',')) %>" />
+<meta name="parsely-pub-date" content="<%= publishedAt.toISOString() %>" />
+<meta name="parsely-type" content="post" data-ephemeral="true" />
+<meta name="parsely-section" content="<%= parselySection %>" data-ephemeral="true" />
+<% authors.forEach(function (author) { _%>
+<meta name="parsely-author" content="<%= h.smartQuotes(author.name) %>" />
+<% }) _%>
+
+<script type="text/javascript">
+var config = {
+  org: '<%= org %>',
+  navTheme: '<%= navTheme %>',
+  name: 'blp.visual-data:graphics-<%= slug %>',
+  bb_brand: '<%= bb_brand %>',
+  bb_slug: '<%= slug %>',
+  bb_category: '<%= bb_category %>',
+  bb_author: '<%= authors.map(d => h.smartQuotes(d.name)).join(", ") %>',
+  bb_cg_3: '<%= h.smartQuotes(seo.description) %>',
+  bb_groupId: 'visual-data/<%= slug %>',
+  bb_pub_d: '<%= publishedAt.format("YYYY-MM-DD") %>',
+  correlator: (new String(Math.random()).substring(2, 11)), // Ad team uses this
+  ad_code: '<%= adCode %>', // Ad team uses this
+  num_ad_scroll_refesh: 3
+}
+var _sf_async_config = {
+  domain: 'bloomberg.com'
+}
+</script>

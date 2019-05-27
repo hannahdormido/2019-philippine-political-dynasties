@@ -1,0 +1,69 @@
+# Read the documentation
+# https://bbgithub.dev.bloomberg.com/soup/borscht/wiki/config
+
+slug: 2019-philippine-political-dynasties
+org: graphics
+
+publishedAt.date: 2019-01-01
+publishedAt.time: 05:00
+publishedAt.tz: America/New_York
+# Or Europe/London Asia/Hong_Kong etc
+
+updatedAt.date:
+updatedAt.time:
+updatedAt.tz: America/New_York
+
+headline: Headline of Graphic
+source: Data compiled by Bloomberg
+corrections:
+
+{seo}
+title:
+description:
+keywords:
+{}
+
+{facebook}
+status:
+title:
+description:
+image: img/2019-philippine-political-dynasties-facebook.png
+{}
+
+{twitter}
+tweet:
+title:
+description:
+image: img/2019-philippine-political-dynasties-twitter.png
+site: @bbgvisualdata
+{}
+
+[authors]
+name: First Author
+
+name: Second Author
+twitter: author
+[]
+
+
+# Advanced config below here
+# ==========================
+scaffoldName: standalone
+
+# Pick from https://bbgithub.dev.bloomberg.com/Consumer-Web/bb.nav/wiki/themes
+navTheme: default
+
+adCode: business/news/graphics
+parselySection: graphics
+
+# bb_brand will always have bbiz and optionally one of the following: bpol, bmkt, bpur, btech, bview
+bb_brand: bbiz
+
+bb_category: Bloomberg Graphic
+
+# See full list of options https://graphics-preview.bloomberg.com/dataviz/documentation/#advanced-config
+[parsely_tags]
+* Page: graphic
+* Region: Americas
+* Secondary Brand: business
+[]

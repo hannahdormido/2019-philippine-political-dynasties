@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <%_ headers.forEach(h => { %>
+    <th><%= h %></th>
+    <%_ }) _%>
+  </tr>
+  <% rows.forEach(r => { %>
+    <tr>
+      <% headers.forEach(h => { %>
+        <td><%= r[h] %></td>
+      <% }) %>
+    </tr>
+  <% }) %>
+</table>

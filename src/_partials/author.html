@@ -1,0 +1,11 @@
+<%_
+  const {link, twitter} = author
+  const name = h.smartQuotes(author.name)
+_%>
+<%_ if (link) { _%>
+<a href="<%= link %>" target="_blank" rel="noopener"><%= name %></a>
+<%_ } else if (twitter) { _%>
+<a href="https://twitter.com/<%= twitter %>" target="_blank" rel="noopener"><%= name %></a>
+<%_ } else { _%>
+<span><%= name %></span>
+<%_ } _%>

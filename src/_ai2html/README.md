@@ -1,0 +1,1 @@
+When you run the ai2html script in `files/ai2html-for-illustrator.js` in Illustrator, the HTML output gets saved to this directory by default (and images go under `./src/img/`). You can find an ai2html template in `files/ai2html-starter.ait`.
