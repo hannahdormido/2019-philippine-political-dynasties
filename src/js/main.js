@@ -14,4 +14,4 @@ borscht.terminal();
 borscht.localize();
 
 /* Uncomment to include ai2html in your project */
-// borscht.ai2html()
+borscht.ai2html()

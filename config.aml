@@ -13,8 +13,7 @@ updatedAt.date:
 updatedAt.time:
 updatedAt.tz: America/New_York
 
-headline: Headline of Graphic
-source: Data compiled by Bloomberg
+headline: New Dynasties Emerge in Ruins of Old Ones After Philippine Vote
 corrections:
 
 {seo}
@@ -39,9 +38,12 @@ site: @bbgvisualdata
 {}
 
 [authors]
-name: First Author
+name: Claire Jiao
 
-name: Second Author
+name: Andreo Calonzo
+twitter: author
+
+name: Hannah Dormido
 twitter: author
 []
 
