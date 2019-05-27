@@ -201,17 +201,6 @@
  </section>
 
 
-
-  <section class="container-width">
-    <div class="copy-width copy-block">
-      <%# This is how you would load some paragraphs from `index.aml` but feel free to modify to your wishes %>
-      <% dek6.forEach(graf => { %>
-        <p><%- h.prettyCopy(graf.value) %></p>
-      <% }) %>
-    </div>
-  
-  </section>
-
   <section class="footer copy-width">
     <p>Source: <%- h.prettyCopy(source) %></p>
   </section>
