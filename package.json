@@ -27,7 +27,7 @@
     "gulp-tap": "^1.0.1",
     "indian-ocean": "^3.1.0",
     "moment-timezone": "^0.5.25",
-    "node-notifier": "^5.4.0",
+    "node-notifier": "^8.0.1",
     "rollup": "^1.11.3",
     "rollup-load-plugins": "^0.4.0",
     "rollup-plugin-buble": "^0.19.6",
